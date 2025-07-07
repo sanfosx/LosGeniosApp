@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/api/gs", "methods": ["GET", "POST", "OPTIONS"], "dest": "api/gs.js" },
+    { "src": "/", "dest": "/index.html" }
+  ]
+}
