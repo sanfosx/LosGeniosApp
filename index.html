@@ -79,7 +79,6 @@ if (!res.ok) {
   throw new Error("Error del servidor: " + errorText);
 }
 
-const horas = await res.json();
 
       const resultado = await res.json();
       document.getElementById("resultado").textContent = "✅ Reserva confirmada para: " + resultado.mesaNombre;
