@@ -68,18 +68,15 @@
         return alert("Completa todos los campos");
       }
 
-   const res = await fetch(API_URL, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ action: "getHoras", fecha, personas, apiKey: API_KEY })
-});
-
-if (!res.ok) {
-  const errorText = await res.text();
-  throw new Error("Error del servidor: " + errorText);
-}
-
-
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          action: "crearReserva",
+          nombre, telefono, email, fecha, personas, hora,
+          apiKey: API_KEY
+        })
+      });
       const resultado = await res.json();
       document.getElementById("resultado").textContent = "✅ Reserva confirmada para: " + resultado.mesaNombre;
     }
